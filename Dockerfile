@@ -17,4 +17,6 @@ COPY . .
 # Adding the EXPOSE command to expose port 80.
 EXPOSE 80
 
-CMD ["bash", "start.sh"]
+# Adding a delay before starting the application to give other services in the container enough time to start.
+# Sleeping for 5 seconds.
+CMD ["bash", "-c", "sleep 5 && bash start.sh"]
